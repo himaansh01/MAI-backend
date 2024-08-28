@@ -4,7 +4,7 @@ const Sentiment = require('sentiment');
 const xlsx = require('xlsx');
 const cors = require('cors');
 const path = require('path');
-const {DiabetesDrugs, diabetesDrugs2, diabetesDrugs3, sentimentData, topBrands, topforum,  commentsData, page2data, verbalcomm1, verbalcomm2, verbalcomm3, webchart1, webchart2, webchart3, conversion, diabetesdata3, financialsupport, nursingsupport, paperworksupport, trailsupport, transparency} =require ("./db")
+const {DiabetesDrugs, diabetesDrugs2, diabetesDrugs3, sentimentData, topBrands, topforum,  commentsData, page2data, verbalcomm1, verbalcomm2, verbalcomm3, webchart1, webchart2, webchart3, conversion, diabetesdata3, brochure1, brochure2, brochure3} =require ("./db")
 
 const app = express();
 const sentiment = new Sentiment();
@@ -48,29 +48,37 @@ app.post('/analyze', (req, res) => {
 
 app.get("/diabetes", async (req,res)=>{
     const response =await  DiabetesDrugs.find({})
+  
 
     res.json({
        response
+        
     })
 
 });
 app.get("/diabetes2", async (req,res)=>{
-    const diabetes = await diabetesDrugs2.find({})
+    const response = await diabetesDrugs2.find({})
     res.json({
-        diabetes
+        response
     })
 })
 
 app.get("/diabetes3", async (req,res)=>{
    
-    const diabetes3 = await diabetesdata3.find({})
+    const response = await diabetesdata3.find({})
 
     res.json({
     
-        diabetes3
+        response
     })
 
 });
+
+
+
+
+
+
 
 app.get("/clusttered", async (req,res)=>{
     const response = await sentimentData.find({})
@@ -81,17 +89,17 @@ app.get("/clusttered", async (req,res)=>{
 })
 
 app.get("/topBrands", async(req,res)=>{
-    const topBrandsdata= await topBrands.find({})
+    const response= await topBrands.find({})
     
     res.json({
-        topBrandsdata,
+        response
     })
 });
 
-app.get("/topForum", async(req,res)=>{
-    const topForumData = await topforum.find({})
+app.get("/topForum", async (req,res)=>{
+    const response = await topforum.find({})
     res.json({
-        topForumData
+        response
     })
 })
 
@@ -156,43 +164,23 @@ app.get("/webChart3", async(req,res)=>{
     })
 })
 
-app.get("/financialsupport", async(req,res)=>{
-    const response =await financialsupport.find({})
+
+app.get("/brochure1", async(req,res)=>{
+    const response = await brochure1.find({})
     res.json({
         response
     })
 })
 
-app.get("/nursingsupport", async(req,res)=>{
-    const response = await nursingsupport.find({})
+app.get("/brochure2", async(req,res)=>{
+    const response = await brochure2.find({})
     res.json({
         response
     })
 })
 
-app.get("/paperworksupport", async(req,res)=>{
-    const response = await paperworksupport.find({})
-    res.json({
-        response
-    })
-})
-
-app.get("/trailsupport", async(req,res)=>{
-    const response = await trailsupport.find({})
-    res.json({
-        response
-    })
-})
-
-app.get("patientcentricity", async(req,res)=>{
-    const response = await patientCentricitySentiment.find({})
-    res.json({
-        response
-    })     
-})
-
-app.get("/transparency", async(req,res)=>{
-    const response = await transparency.find({})
+app.get("/brochure3", async(req,res)=>{
+    const response = await brochure3.find({})
     res.json({
         response
     })
@@ -200,9 +188,5 @@ app.get("/transparency", async(req,res)=>{
 
 
 
-
-
-
-
-const PORT = 5000;
+const PORT = 5006;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

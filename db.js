@@ -4,37 +4,10 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://manikantamannalliker:himaansh01@cluster0.8cdpsbn.mongodb.net/MAI")
 
 
-
-const paperworkSupportSchema = new mongoose.Schema({
-    name:{
-        type:String
-    },
-    value:{
-        type:Number
-    }
-})
-
-const nursingSupportSchema = new mongoose.Schema({
-    name:{
-        type:String
-    },
-    value:{
-        type:Number
-    }
-})
-
-const financialSupportSchema = new mongoose.Schema({
-    name:{
-        type:String
-    },
-    value:{
-        type:Number
-    }
-})
-
 const topforumSchema = new mongoose.Schema({
     name:{
         type:String,
+
     },
     percentage:{
         type: String
@@ -192,39 +165,39 @@ const page2dataSchema = new mongoose.Schema({
     }
 })
 
-const patientCentricitySentimentSchema= new mongoose.Schema({
+
+const brochure1Schema= new mongoose.Schema({
     name:{
         type:String
     },
     value:{
-        type:Number
+        type: Number
     }
 })
 
-const transparencySchema= new mongoose.Schema({
+
+const brochure2Schema= new mongoose.Schema({
     name:{
         type:String
     },
     value:{
-        type:Number
+        type: Number
     }
 })
 
-const trailSupportSchema= new mongoose.Schema({
+const brochure3Schema= new mongoose.Schema({
     name:{
         type:String
     },
     value:{
-        type:Number
+        type: Number
     }
 })
 
 
-
-
-const trailsupport= mongoose.model("trailsupport", trailSupportSchema)
-const transparency= mongoose.model("transparency", transparencySchema)
-const patientCentricitySentiment= mongoose.model("patientCentricitySentiment", patientCentricitySentimentSchema)
+const brochure1 = mongoose.model("brochure1", brochure1Schema)
+const brochure2 = mongoose.model("brochure2", brochure2Schema)
+const brochure3 = mongoose.model("brochure3", brochure3Schema)
 const commentsData= mongoose.model("commentsData", commentsDataSchema)
 const page2data= mongoose.model("page2data", page2dataSchema)
 const webchart1=mongoose.model("webChart1", webchart1Schema)
@@ -240,19 +213,13 @@ const topBrands = mongoose.model("topBrands", topBrandsSchema);
 const sentimentData= mongoose.model("sentimentData", sentimentDataSchema)
 const conversion= mongoose.model("conversion", conversionSchema)
 const diabetesdata3 = mongoose.model("diabetesdata3", diabetesdata3Schema)
-const financialsupport = mongoose.model("financialsupport",financialSupportSchema)
-const paperworksupport = mongoose.model("paperworksupport",paperworkSupportSchema)
-const nursingsupport = mongoose.model("nursingsupport",nursingSupportSchema)
 
 
 
 module.exports={
-    trailsupport,
-    transparency,
-    patientCentricitySentiment,
-    financialsupport,
-    paperworksupport,
-    nursingsupport,
+    brochure1,
+    brochure2,
+    brochure3,
     topforum,
     topBrands,
     webchart1,
