@@ -1,56 +1,98 @@
 const mongoose = require("mongoose");
 
 
-mongoose.connect("mongodb+srv://manikantamannalliker:himaansh01@cluster0.8cdpsbn.mongodb.net/MAI")
+mongoose.connect("mongodb+srv://manikantamannalliker:himaansh01@cluster0.8cdpsbn.mongodb.net/MAI_2")
 
 
-const topforumSchema = new mongoose.Schema({
+
+
+const topForumSchema = new mongoose.Schema({
     name:{
-        type:String,
-
+        type:String
     },
     percentage:{
-        type: String
+        type:String
     }
+});
 
-})
-
-const topBrandsSchema = new mongoose.Schema({
+const topBrandsSchema= new mongoose.Schema({
     name:{
-        type:String,
-
+        type:String
     },
     percentage:{
-        type: String
+        type:String
     }
-
 })
 
-const sentimentDataSchema = new mongoose.Schema({
+const topBrandsSchema1= new mongoose.Schema({
+    name:{
+        type:String
+    },
+    percentage:{
+        type:String
+    }
+})
+
+const topBrandsSchema2= new mongoose.Schema({
+    name:{
+        type:String
+    },
+    percentage:{
+        type:String
+    }
+})
+
+const mostFrequentTopicsSchema = new mongoose.Schema({
+    name:{
+        type:String
+    },
+    value:{
+        type:Number
+    }
+})
+
+const csDiabetesWithWeightlossSchema = new mongoose.Schema({
+    name:{
+        type:String
+    },
+    value:{
+        type:Number
+    }
+})
+const csDiabetesSchema = new mongoose.Schema({
+    name:{
+        type:String
+    },
+    value:{
+        type:Number
+    }
+})
+
+const csGliptinsSchema = new mongoose.Schema({
+    name:{
+        type:String
+    },
+    value:{
+        type:Number
+    }
+})
+
+const sentimentAnalysisHBSchema = new mongoose.Schema({
     name:{
         type:String
     },
     positive:{
-        type:Number
+        value:Number
     },
     negative:{
-        type:Number
+        value:Number
     },
     neutral:{
-        type:Number
+        value:Number
     }
 })
 
-const conversionSchema = new mongoose.Schema({
-    Content:{
-        type: String
-    },
-    Category:{
-        type:String
-    }
-})
-
-const DiabetesDrugsSchema = new mongoose.Schema({
+const websiteDiabetesWithWeightlossSchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -59,7 +101,7 @@ const DiabetesDrugsSchema = new mongoose.Schema({
     }
 })
 
-const diabetesDrugs2Schema = new mongoose.Schema({
+const websiteDiabetesSchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -68,8 +110,7 @@ const diabetesDrugs2Schema = new mongoose.Schema({
     }
 })
 
-
-const diabetesdata3Schema = new mongoose.Schema({
+const websiteGliptinsSchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -78,8 +119,7 @@ const diabetesdata3Schema = new mongoose.Schema({
     }
 })
 
-
-const verbalcomm1Schema = new mongoose.Schema({
+const tvAdsDiabetesWithWeightlossSchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -88,8 +128,7 @@ const verbalcomm1Schema = new mongoose.Schema({
     }
 })
 
-
-const verbalcomm2Schema = new mongoose.Schema({
+const tvAdsDiabetesSchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -98,9 +137,7 @@ const verbalcomm2Schema = new mongoose.Schema({
     }
 })
 
-
-
-const verbalcomm3Schema = new mongoose.Schema({
+const tvAdsGliptinsSchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -109,7 +146,7 @@ const verbalcomm3Schema = new mongoose.Schema({
     }
 })
 
-const webchart1Schema = new mongoose.Schema({
+const brochureDiabetesWithweightloss= new mongoose.Schema({
     name:{
         type:String
     },
@@ -118,8 +155,15 @@ const webchart1Schema = new mongoose.Schema({
     }
 })
 
-
-const webchart2Schema = new mongoose.Schema({
+const brochureDiabetesSchema= new mongoose.Schema({
+    name:{
+        type:String
+    },
+    value:{
+        type:Number
+    }
+})
+const brochureGliptinsSchema= new mongoose.Schema({
     name:{
         type:String
     },
@@ -128,8 +172,7 @@ const webchart2Schema = new mongoose.Schema({
     }
 })
 
-
-const webchart3Schema = new mongoose.Schema({
+const verbalCommDiabeteswithWeightlossSchema= new mongoose.Schema({
     name:{
         type:String
     },
@@ -138,25 +181,16 @@ const webchart3Schema = new mongoose.Schema({
     }
 })
 
-const commentsDataSchema = new mongoose.Schema({
-    Platform:{
+const verbalCommDiabetesSchema= new mongoose.Schema({
+    name:{
         type:String
     },
-    Content:{
-        type:String
-    },
-    Category:{
-        type:String
-    },
-    Topic:{
-        type:String
-    },
-    Subtopic:{
-        type:String
+    value:{
+        type:Number
     }
 })
 
-const page2dataSchema = new mongoose.Schema({
+const verbalCommGliptinsSchema= new mongoose.Schema({
     name:{
         type:String
     },
@@ -166,73 +200,53 @@ const page2dataSchema = new mongoose.Schema({
 })
 
 
-const brochure1Schema= new mongoose.Schema({
-    name:{
-        type:String
-    },
-    value:{
-        type: Number
-    }
-})
 
 
-const brochure2Schema= new mongoose.Schema({
-    name:{
-        type:String
-    },
-    value:{
-        type: Number
-    }
-})
 
-const brochure3Schema= new mongoose.Schema({
-    name:{
-        type:String
-    },
-    value:{
-        type: Number
-    }
-})
-
-
-const brochure1 = mongoose.model("brochure1", brochure1Schema)
-const brochure2 = mongoose.model("brochure2", brochure2Schema)
-const brochure3 = mongoose.model("brochure3", brochure3Schema)
-const commentsData= mongoose.model("commentsData", commentsDataSchema)
-const page2data= mongoose.model("page2data", page2dataSchema)
-const webchart1=mongoose.model("webChart1", webchart1Schema)
-const webchart2=mongoose.model("webchart2", webchart2Schema)
-const webchart3=mongoose.model("webchart3", webchart3Schema)
-const verbalcomm1=mongoose.model("verbalcomm1",verbalcomm1Schema)
-const verbalcomm2=mongoose.model("verbalcomm2",verbalcomm2Schema)
-const verbalcomm3=mongoose.model("verbalcomm3",verbalcomm3Schema)
-const diabetesDrugs2 = mongoose.model("diabetesDrugs2", diabetesDrugs2Schema)
-const DiabetesDrugs = mongoose.model("DiabetesDrugs", DiabetesDrugsSchema)
-const topforum = mongoose.model("topforum", topforumSchema);
-const topBrands = mongoose.model("topBrands", topBrandsSchema);
-const sentimentData= mongoose.model("sentimentData", sentimentDataSchema)
-const conversion= mongoose.model("conversion", conversionSchema)
-const diabetesdata3 = mongoose.model("diabetesdata3", diabetesdata3Schema)
+const topForum= mongoose.model("topForum", topForumSchema)
+const topBrands = mongoose.model("topBrands", topBrandsSchema)
+const topBrands1 = mongoose.model("topBrands1", topBrandsSchema)
+const topBrands2 = mongoose.model("topBrands2", topBrandsSchema)
+const mostFrequentTopics= mongoose.model("mostFrequentTopics", mostFrequentTopicsSchema)
+const csDiabetesWithWeightloss=mongoose.model("csDiabetesWithWeightloss", csDiabetesWithWeightlossSchema)
+const csDiabetes = mongoose.model("csDiabetes", csDiabetesSchema)
+const csGliptins= mongoose.model ("csGliptins", csGliptinsSchema)
+const sentimentAnalysisHB = mongoose.model("sentimentAnalysisHB", sentimentAnalysisHBSchema)
+const websiteDiabetesWithWeightloss=mongoose.model("websiteDiabetesWithWeightloss",websiteDiabetesWithWeightlossSchema)
+const websiteDiabetes = mongoose.model("websiteDiabtes", websiteDiabetesSchema)
+const websiteGliptins = mongoose.model("websiteGliptins", websiteGliptinsSchema)
+const tvAdsDiabetesWithWeightloss=mongoose.model("tvAdsDiabetesWithWeightloss", tvAdsDiabetesWithWeightlossSchema)
+const tvAdsDiabetes=mongoose.model("tvAdsDiabetes", tvAdsDiabetesSchema)
+const tvAdsGliptins=mongoose.model("tvAdsGliptins", tvAdsGliptinsSchema)
+const brochureDiabetesWithWeightloss=mongoose.model("brochureDiabatesWithWeightloss", brochureDiabetesWithweightloss)
+const brochureDiabetes=mongoose.model("brochureDiabates", brochureDiabetesSchema)
+const brochureGliptins=mongoose.model("brochureGliptins", brochureGliptinsSchema)
+const verbalCommDiabetesWithWeightloss= mongoose.model("verbalCommDiabetesWithWeightloss",verbalCommDiabeteswithWeightlossSchema)
+const verbalCommDiabetes= mongoose.model("verbalCommDiabetes",verbalCommDiabetesSchema)
+const verbalCommGliptins= mongoose.model("verbalCommGliptins",verbalCommGliptinsSchema) 
 
 
 
 module.exports={
-    brochure1,
-    brochure2,
-    brochure3,
-    topforum,
+    topForum,
     topBrands,
-    webchart1,
-    webchart2,
-    webchart3,
-    verbalcomm1,
-    verbalcomm2,
-    verbalcomm3,
-    diabetesdata3,
-    sentimentData,
-    page2data,
-    commentsData,
-    diabetesDrugs2,
-    conversion,
-    DiabetesDrugs
+    topBrands1,
+    topBrands2,
+    mostFrequentTopics,
+    csDiabetesWithWeightloss,
+    csDiabetes,
+    csGliptins,
+    sentimentAnalysisHB,
+    websiteDiabetesWithWeightloss,
+    websiteDiabetes,
+    websiteGliptins,
+    tvAdsDiabetesWithWeightloss,
+    tvAdsDiabetes,
+    tvAdsGliptins,
+    brochureDiabetesWithWeightloss,
+    brochureDiabetes,
+    brochureGliptins,
+    verbalCommDiabetesWithWeightloss,
+    verbalCommDiabetes,
+    verbalCommGliptins
 }
